@@ -1,0 +1,81 @@
+nav {
+  width: 20rem;
+  height: 100%;
+  background-color: #333;
+  box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.2);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+
+    li {
+      list-style: none;
+      position: relative;
+      border-bottom: #484a4a solid 0.1rem;
+
+      a {
+        padding: 1.5rem 2rem;
+        display: block;
+        color: white;
+        text-align: left;
+        font-size: 1.8rem;
+        text-decoration: none;
+        box-sizing: content-box;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          color: #35c0cc;
+        }
+      }
+
+      &.item {
+        list-style: none;
+        position: relative;
+      }
+
+    }
+  }
+  
+}
+// nav ul li.item > a:after {
+//   font-family: "Font Awesome 5 Free";
+//   font-weight: 900;
+//   font-size: 1rem;
+//   color: #35c0cc;
+//   content: "";
+//   position: absolute;
+//   top: 2rem;
+//   right: 2rem;
+//   cursor: pointer;
+//   transition: transform 0.2s;
+// }
+// nav ul li.item.open > a:after {
+//   transform: rotate(180deg);
+// }
+// nav ul li.item.open > .submenu {
+//   visibility: visible;
+//   max-height: 40rem;
+//   transition: visibility 0.5s, max-height 0.5s;
+// }
+// nav ul li.item .submenu {
+//   visibility: hidden;
+//   max-height: 0;
+//   width: 100%;
+//   overflow: hidden;
+//   font-size: 1.2rem;
+//   transition: visibility 0.3s, max-height 0.3s;
+// }
+// nav ul li.item .submenu li {
+//   border-bottom: none;
+// }
+// nav ul li.item .submenu li a {
+//   margin-left: 2rem;
+//   font-size: 1.4rem;
+//   color: white;
+// }
+// nav ul li.item .submenu li a:hover {
+//   color: #35c0cc;
+// }
