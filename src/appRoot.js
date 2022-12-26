@@ -1,22 +1,25 @@
 import React, { lazy } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-<BrowserRouter></BrowserRouter>;
+
+// components
 import AppRouting from './routing'
 import GlobalLayout from './layouts/global'
+
+// routes
 const Home = lazy(() => import('./routes/home'));
-const AnotherRoute = lazy(() => import('./routes/second'));
+const WithNav = lazy(() => import('./routes/withNav'));
 
 function AppRoot() { 
   const routesArr = [
     {
       p: '/',
       e: Home,
-      s: 'home',
+      s: 'Starting',
     },
     {
-      p: '/second',
-      e: AnotherRoute,
-      s: 'second-route',
+      p: '/with-nav',
+      e: WithNav,
+      s: 'With A Nav',
     },
   ];  
   return (
