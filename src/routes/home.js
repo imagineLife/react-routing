@@ -2,7 +2,7 @@ import React from 'react';
 
 function Home() {
   return (
-    <main>
+    <section id="home">
       <h1>Home</h1>
 
       <h3>A Single-Page App that works with several Urls</h3>
@@ -87,7 +87,7 @@ export default Routing;`}</code>
         </i>
       </p>
       <p>Each route gets a corresponding {`<Route />`} element. Each route gets 2 props here: a path (<i>the url that corresponds to the route</i>) and the element (<i>the react element that corresponds to each route</i>).</p>
-    </main>
+    </section>
   );
 }
 
