@@ -6,6 +6,7 @@ import AppRouting from './routing'
 import GlobalLayout from './layouts/global'
 
 // routes
+// NOTE: the routes "state" could be moved into a useRoutes "hook"
 const Home = lazy(() => import('./routes/home'));
 const WithNav = lazy(() => import('./routes/withNav'));
 

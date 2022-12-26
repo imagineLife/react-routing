@@ -9,7 +9,8 @@ function Sidebar({ routesArr }) {
     <nav aria-label="Main Navigation">
       <ul>
         {routesArr.map((r) => (
-          <li className="item" key={r.s} aria-expanded="false">
+          // TODO: aria-expanded= false/true
+          <li className="item" key={r.s}>
             <Link to={r.p}>{r.s}</Link>
           </li>
         ))}
