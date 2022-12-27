@@ -35,7 +35,11 @@ function WithNav() {
       <h3>Build the Sidebar Component</h3>
       <ul>
         <li>
-          <b>Create</b> the component. Here, the nav is a {"<nav>"} component with an unordered list. Each route gets a list item
+          <b>Create</b> the component. Here, the nav is a {'<nav>'} component with an unordered
+          list. Each route gets a list item
+        </li>
+        <li>
+          <p><b>NOTE</b> that the sidebar will not re-render when switching routes. Because the sidebar state & props don't change and the sidebar is not a "child" of the GlobalLayout children, the sidebar doesn't re-render. This type of render optimization and app-agnostic detailing may make for this component a candidate for SSR and/or Micro-frontend architecture.</p>
         </li>
       </ul>
     </main>
