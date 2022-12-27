@@ -1,10 +1,10 @@
 import React, { lazy } from 'react';
 
-const Home = lazy(() => import('./routes/home'));
-const WithNav = lazy(() => import('./routes/withNav'));
-const Items = lazy(() => import('./routes/items'));
-const ItemById = lazy(() => import('./routes/itemById'));
-const SpecificItem = lazy(() => import('./routes/itemSpecific'));
+const Home = lazy(() => import('../routes/home'));
+const WithNav = lazy(() => import('../routes/withNav'));
+const Items = lazy(() => import('../routes/items'));
+const ItemById = lazy(() => import('../routes/itemById'));
+const SpecificItem = lazy(() => import('../routes/itemSpecific'));
 const routesArr = [
   {
     p: '/',

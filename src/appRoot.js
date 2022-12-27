@@ -2,9 +2,9 @@ import React, { lazy } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 // components
-import AppRouting from './routing'
+import AppRouting from './routing/renderer'
 import GlobalLayout from './layouts/global'
-import routesArr from './routesData';
+import routesArr from './routing/routes';
 
 function AppRoot() { 
   return (
