@@ -22,32 +22,44 @@ function Routing({ routesArr }) {
 
           // "nested" routes
         } else {
-          return (
-            <Route path={d.p} key={d.s}>
-              <Route
-                index
-                element={
-                  <Suspense>
-                    <Elm />
-                  </Suspense>
-                }
-              />
-              {d.children.map((childRoute) => {
-                const ChildRoute = childRoute.e;
-                return (
-                  <Route
-                    path={childRoute.p}
-                    element={
-                      <Suspense fallback={<span />}>
-                        <ChildRoute />
-                      </Suspense>
-                    }
-                    key={childRoute.s}
-                  />
-                );
-              })}
-            </Route>
-          );
+          const ParentLayoutElement = d?.layout;
+          let parentProps = {
+            path: d.p,
+            key: d.s
+          }
+          if (ParentLayoutElement) { 
+            parentProps.element = (
+              <Suspense fallback={<span />}>
+                <ParentLayoutElement />
+              </Suspense>
+            );
+          }
+            return (
+              <Route {...parentProps}>
+                <Route
+                  index
+                  element={
+                    <Suspense>
+                      <Elm />
+                    </Suspense>
+                  }
+                />
+                {d.children.map((childRoute) => {
+                  const ChildRoute = childRoute.e;
+                  return (
+                    <Route
+                      path={childRoute.p}
+                      element={
+                        <Suspense fallback={<span />}>
+                          <ChildRoute />
+                        </Suspense>
+                      }
+                      key={childRoute.s}
+                    />
+                  );
+                })}
+              </Route>
+            );
         }
       })}
     </Routes>
