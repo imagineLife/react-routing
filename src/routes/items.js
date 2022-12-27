@@ -23,6 +23,10 @@ function Items() {
       id: 345,
       name: 'a third item',
     },
+    {
+      id: 'a-unique-url',
+      name: 'a specific item!',
+    },
   ];
   return (
     <>

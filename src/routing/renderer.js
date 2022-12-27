@@ -1,11 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function Routing({routesArr}) {
+function Routing({ routesArr }) {
   return (
-      <Routes>
-        {routesArr.map((d) => {
-          const Elm = d.e;
+    <Routes>
+      {routesArr.map((d) => {
+        // "flat" routes
+        const Elm = d.e;
+        if (!d?.nested) {
           return (
             <Route
               path={d.p}
@@ -17,8 +19,38 @@ function Routing({routesArr}) {
               key={d.s}
             />
           );
-        })}
-      </Routes>
+
+          // "nested" routes
+        } else {
+          return (
+            <Route path={d.p} key={d.s}>
+              <Route
+                index
+                element={
+                  <Suspense>
+                    <Elm />
+                  </Suspense>
+                }
+              />
+              {d.children.map((childRoute) => {
+                const ChildRoute = childRoute.e;
+                return (
+                  <Route
+                    path={childRoute.p}
+                    element={
+                      <Suspense fallback={<span />}>
+                        <ChildRoute />
+                      </Suspense>
+                    }
+                    key={childRoute.s}
+                  />
+                );
+              })}
+            </Route>
+          );
+        }
+      })}
+    </Routes>
   );
 }
 
