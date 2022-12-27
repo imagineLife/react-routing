@@ -37,7 +37,6 @@ function AppRoot() {
       s: 'Item By Id',
     },
     {
-      // NOTE: itemId matches the useParams param in the ItemById component
       p: '/items/a-unique-url',
       e: SpecificItem,
       s: 'Specific Item',
