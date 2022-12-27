@@ -18,6 +18,38 @@ const routesArr = [
     s: 'With A Nav',
   },
   {
+    nested: true,
+    p: '/items',
+    e: Items,
+    s: 'Items',
+    children: [
+      {
+        // NOTE: itemId matches the useParams param in the ItemById component
+        p: ':itemId',
+        e: ItemById,
+        s: 'Item By Id',
+      },
+      {
+        p: 'a-unique-url',
+        e: SpecificItem,
+        s: 'Specific Item',
+      },
+    ],
+  },
+  {
+    p: '*',
+    e: NotFound,
+    s: 'NotFound',
+  },
+];
+
+export default routesArr;
+
+
+/*
+  Before Route Nesting
+  - 3 routes: items, items/:itemId, and items/a-unique-url
+  {
     p: '/items',
     e: Items,
     s: 'Items',
@@ -33,11 +65,4 @@ const routesArr = [
     e: SpecificItem,
     s: 'Specific Item',
   },
-  {
-    p: '*',
-    e: NotFound,
-    s: 'NotFound',
-  },
-];
-
-export default routesArr;
+*/ 
