@@ -30,6 +30,10 @@ const htmlRule = {
 };
 
 module.exports = {
+  output: {
+    // useful for things like parameter-driven urls: items/:itemId
+    publicPath: '/'
+  },
   module: {
     rules: [
       sassRule,
