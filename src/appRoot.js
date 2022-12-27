@@ -30,7 +30,8 @@ function AppRoot() {
       s: 'Items',
     },
     {
-      p: '/items/:id',
+      // NOTE: itemId matches the useParams param in the ItemById component
+      p: '/items/:itemId',
       e: ItemById,
       s: 'Item By Id',
     },
