@@ -5,6 +5,7 @@ const WithNav = lazy(() => import('../routes/withNav'));
 const Items = lazy(() => import('../routes/items'));
 const ItemById = lazy(() => import('../routes/itemById'));
 const SpecificItem = lazy(() => import('../routes/itemSpecific'));
+const NotFound = lazy(() => import('../routes/notFound'));
 const routesArr = [
   {
     p: '/',
@@ -31,6 +32,11 @@ const routesArr = [
     p: '/items/a-unique-url',
     e: SpecificItem,
     s: 'Specific Item',
+  },
+  {
+    p: '*',
+    e: NotFound,
+    s: 'NotFound',
   },
 ];
 
