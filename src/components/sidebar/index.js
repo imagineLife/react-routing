@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 // a sidebar example INCLUDING nested routes (not-yet-implemented here)
 // https://codepen.io/andreaamado/pen/ExbvEmP
 function Sidebar({ routesArr }) {
+  console.log('Sidebar render')
+  
   return (
     <nav aria-label="Main Navigation">
       <ul>
