@@ -3,6 +3,7 @@ import React, { lazy } from 'react';
 const Home = lazy(() => import('../routes/home'));
 const WithNav = lazy(() => import('../routes/withNav'));
 const Items = lazy(() => import('../routes/items'));
+const ItemLayout = lazy(() => import('../routes/itemsLayout'));
 const ItemById = lazy(() => import('../routes/itemById'));
 const SpecificItem = lazy(() => import('../routes/itemSpecific'));
 const NotFound = lazy(() => import('../routes/notFound'));
@@ -21,6 +22,7 @@ const routesArr = [
     nested: true,
     p: '/items',
     e: Items,
+    layout: ItemLayout,
     s: 'Items',
     children: [
       {
