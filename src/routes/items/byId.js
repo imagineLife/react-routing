@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-function ItemById() { 
+function ById() { 
   const { itemId } = useParams()
 
   return (
@@ -23,4 +23,4 @@ function ItemById() {
   );
 }
 
-export default ItemById
+export default ById
