@@ -2,10 +2,12 @@ import React, { lazy } from 'react';
 
 const Home = lazy(() => import('../routes/home'));
 const WithNav = lazy(() => import('../routes/withNav'));
-const Items = lazy(() => import('../routes/items'));
-const ItemLayout = lazy(() => import('../routes/itemsLayout'));
-const ItemById = lazy(() => import('../routes/itemById'));
-const SpecificItem = lazy(() => import('../routes/itemSpecific'));
+
+// items routes
+const Items = lazy(() => import('../routes/items/items'));
+const ItemLayout = lazy(() => import('../routes/items/layout'));
+const ItemById = lazy(() => import('../routes/items/byId'));
+const SpecificItem = lazy(() => import('../routes/items/specific'));
 const NotFound = lazy(() => import('../routes/notFound'));
 
 // THIS is a separate route "library"
