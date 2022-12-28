@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useParams } from 'react-router-dom';
 
 import OtherList from './other/list'
-import OtherById from './other/byId';
+const OtherById = lazy(() => import('./other/byId'));
 
 function OtherItemNewRoute() {
   return (
@@ -16,7 +16,14 @@ function OtherListRoutes() {
   return (
     <Routes>
       <Route index element={<OtherList />} />
-      <Route path=":otherId" element={<OtherById />} />
+      <Route
+        path=":otherId"
+        element={
+          <Suspense fallback={<span />}>
+            <OtherById />
+          </Suspense>
+        }
+      />
       <Route path="otherNew" element={<OtherItemNewRoute />} />
     </Routes>
   );
